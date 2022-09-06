@@ -40,6 +40,19 @@ pipeline {
       }
     }
     
+     options {
+        timeout(time: 3, unit: 'SECONDS')
+    }
+
+    stages{
+        stage('run') {
+            steps {
+                sh 'sleep 5'
+                // working:
+                // sleep(time: 5, unit: 'SECONDS')
+            }
+        }
+    }
       
      stage ('Build') {
        steps {
